@@ -31,9 +31,9 @@ Follow the guidance in the Q&A video, below is how I completed the requirements 
 
 2. **Smoothing:** In this part, we're going to try making the car drive a bit smoother in the curves, so it does not violate any jerk and acceleration limits. The idea here is to: (1) first come up with two "starting points"; (2) after we got these two points, we'll add 3 more points, that are 30, 60, and 90 meters away. (3) We will then construct a spline using the provided `spline.h` function using the 5 points we got earlier. (4) Then, with the constructed spline, we can look up  `(x, y)` waypoint vectors that gives us appropriate vehicle speed. The result from this step looks like below, the car eventually ended up rear-ending other cars in the lane since we're still disregarding all other traffics, but the trajectory is much smoother now and we don't see any violation to acceleration and jerk limits except for the begining. 
 
-![step2_smoothing](./img/s2.gif)
+   ![step2_smoothing](./img/s2.gif)
 
-The magic part about this trajectory generation algorithm (Lines 198~305 in `main.cpp`) is that it takes two inputs only: `ref_vel` and `lane`, in this way, we parameterized the lane trajectory generation so it can be applied to below steps as well: the collision avoidance and lane changing scenario.
+	The magic part about this trajectory generation algorithm (Lines 198~305 in `main.cpp`) is that it takes two inputs only: `ref_vel` and `lane`, in this way, we parameterized the lane trajectory generation so it can be applied to below steps as well: the collision avoidance and lane changing scenario.
 
 
 
